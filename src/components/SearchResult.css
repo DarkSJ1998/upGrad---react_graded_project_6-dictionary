@@ -1,0 +1,23 @@
+* {
+    /*font-family: 'Bookman Old Style'*/
+    font-family: 'Sitka Banner';
+}
+.topBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #567CF7;
+}
+.resultWindow {
+    display: flex;
+    justify-content: center;
+    padding: 0% 20%;
+    background-color: #E8E6EE;
+    height: 91vh;
+}
+.resultData {
+    background-color: white;
+    width: 70%;
+    overflow: auto;
+}

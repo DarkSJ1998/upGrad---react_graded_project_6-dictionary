@@ -1,0 +1,37 @@
+.SearchBar {
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    justify-content: center;
+}
+#search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.DictionaryText {
+    background-color: #140F3B;
+    color: white;
+    padding: 10px 60px 10px 10px;
+    border-radius: 5px 0px 0px 5px;
+    border: 0px;
+    height: 16px;
+}
+input {
+    padding: 10px;
+    height: 16px;
+    width: 160%;
+    border: 0px;
+}
+.SearchButton {
+    background-color: #DCDCDC;
+    border: 0px;
+    color: #E8671F;
+    padding: 5px 10px;
+    height: 26px;
+    cursor: pointer;
+}
+.SearchButton img {
+    max-height: 25px;
+}
