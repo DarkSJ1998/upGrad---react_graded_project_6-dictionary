@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './Header.css';
-import searchIcon from './search-icon-by-Vexels.png';
 
 class Header extends Component {
     state = {
@@ -47,10 +46,14 @@ class Header extends Component {
         console.log("***** Inside Header.render() *****");
         return (
             <div className="SearchBar">
+                {/* <!-- Font Awesome CDN --> */}
+                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+                integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossOrigin="anonymous"/>
+
                 <form id="search">
                     <label htmlFor="searchField" className="DictionaryText">Dictionary</label>
                     <input type="text" id="searchField" placeholder="Search Phase or Word" defaultValue={this.props.word} ref="word_to_search"/>
-                    <span type="button" className="SearchButton" onClick={this.searchWord}><img src={searchIcon} alt="search icon"/></span>
+                    <span type="button" className="SearchButton" onClick={this.searchWord}><i className="fas fa-search"></i></span>
                 </form>
             </div>
         );

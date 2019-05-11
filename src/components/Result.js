@@ -27,11 +27,20 @@ class Result extends Component {
                 </div>
             );
         } else {
+            console.log("******************************************");
+            console.log(this.props.object.results[0].lexicalEntries[0].entries[0]);
             return (
                 <div>
                     <div className="tabs">
-                        <span className="selected" ref="noun" onClick={this.showNoun}>Noun</span>
-                        <span ref="verb" onClick={this.showVerb}>Verb</span>
+                    {
+                        this.props.object.results[0].lexicalEntries[0].entries[0] !== undefined
+                        ? <span className="selected" ref="noun" onClick={this.showNoun}>Noun</span>
+                        : null
+                    }{
+                        this.props.object.results[0].lexicalEntries[1].entries[0] !== undefined
+                        ? <span ref="verb" onClick={this.showVerb}>Verb</span>
+                        : null
+                    }
                     </div>
                     
                     <div className="searchResult">

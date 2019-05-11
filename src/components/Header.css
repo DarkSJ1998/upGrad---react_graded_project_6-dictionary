@@ -16,22 +16,19 @@
     padding: 10px 60px 10px 10px;
     border-radius: 5px 0px 0px 5px;
     border: 0px;
-    height: 16px;
+    font-size: 16px;
 }
 input {
     padding: 10px;
-    height: 16px;
     width: 160%;
     border: 0px;
+    font-size: 16px;
 }
 .SearchButton {
     background-color: #DCDCDC;
     border: 0px;
     color: #E8671F;
-    padding: 5px 10px;
-    height: 26px;
+    padding: 10px;
+    font-size: 16px;
     cursor: pointer;
-}
-.SearchButton img {
-    max-height: 25px;
 }
