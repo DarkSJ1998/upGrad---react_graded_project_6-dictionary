@@ -27,13 +27,15 @@ class App extends Component {
   render() {
     if(this.state.firstRun === 'yes') {
       return (
-        <div className="App">
+        <div className="App-Home">
           <Header setObject={this.setObject} setWord={this.setWord}/>
         </div>
       );
     } else {
       return (
-        <SearchResult word={this.state.word} object={this.state.object}/>
+        <div className="App-Result">
+          <SearchResult word={this.state.word} object={this.state.object}/>
+        </div>
       );
     }
   }

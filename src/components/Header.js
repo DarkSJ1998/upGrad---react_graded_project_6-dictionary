@@ -5,8 +5,8 @@ class Header extends Component {
     state = {
         data : 'No data yet',
         word : this.props.word,
-        app_id : 'e9b7fe71',
-        app_key : '24da6b5ce0efef2afd49cc8ec758c954',
+        app_id : '6972a67c',
+        app_key : '81543de0fc18455b3106394b3513ff2a',
         found : false,
         selected : '0'
     };
@@ -18,28 +18,34 @@ class Header extends Component {
 
     async searchWord() {
         console.log("searchWord() called");
-        var word_to_search = this.refs.word_to_search.value;
-        //var word_to_search = this.state.word;
-        console.log("Search query received : " + word_to_search);
-        
-        const url = "https://cors-anywhere.herokuapp.com/od-api.oxforddictionaries.com/api/v2/entries/en/"+word_to_search;
-        const res = await fetch(url, {
-            headers: {
-                'app_id': this.state.app_id,
-                'app_key': this.state.app_key
+        var word_to_search = this.refs.word_to_search.value.toLowerCase();
+
+        if(word_to_search !== '') {
+            console.log("Search query received : " + word_to_search);
+            
+            const url = "https://cors-anywhere.herokuapp.com/od-api.oxforddictionaries.com/api/v2/entries/en/"+word_to_search;
+            const res = await fetch(url, {
+                headers: {
+                    'app_id': this.state.app_id,
+                    'app_key': this.state.app_key
+                }
+            });
+            const object = await res.json();
+            // console.log("##################################");
+            console.log(object);
+            if(object.error) {
+                // console.log("inside if");
+                object.found = false;
+                this.setState({data: object, found: false});
             }
-        });
-        const object = await res.json();
-        if(!object)
-            this.setState({found: false});
-        console.log(object);
-        object.found = 'true';
-        console.log(object);
-
-        this.setState({data: object, found: true});
-
-        this.props.setWord(word_to_search);
-        this.props.setObject(object);
+            else {
+                // console.log("inside else");
+                object.found = true;
+                this.setState({data: object, found: true});
+            }
+            this.props.setWord(word_to_search);
+            this.props.setObject(object);
+        }
     }
 
     render() {
@@ -58,10 +64,6 @@ class Header extends Component {
             </div>
         );
     }
-
-    // getWord = (e) => {
-    //     this.setState({word: e.target.value});
-    // }
 }
 
 export default Header;
