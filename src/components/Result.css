@@ -4,7 +4,7 @@
     background-color: #130F3B
 }
 .tabs span {
-    width: 50%;
+    width: 100%;
     padding: 20px;
     color: white;
     text-align: center;
@@ -20,7 +20,7 @@
 }
 .searchResult {
     padding: 20px;
-    /* height: 91vh; */
+    height: 75.7vh;
     overflow: auto;
 }
 .noResultFound {
