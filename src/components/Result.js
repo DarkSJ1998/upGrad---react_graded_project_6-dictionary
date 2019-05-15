@@ -112,12 +112,16 @@ class Result extends Component {
         var definitions;
         var examples;
         var subsenses;
+        var crossReferenceMarkers;
+
         if(item.definitions)
             definitions = item.definitions[0];
         if(item.examples)
             examples = item.examples;
         if(item.subsenses)
             subsenses = item.subsenses;
+        if(item.crossReferenceMarkers)
+            crossReferenceMarkers = item.crossReferenceMarkers;
         
         return (
             <li key={item.id}>
@@ -128,6 +132,11 @@ class Result extends Component {
                 <ol className="innerList">
                     {subsenses ? subsenses.map(this.printSubsenses) : null}
                 </ol>
+                <ul>
+                    {crossReferenceMarkers ? crossReferenceMarkers.map( (item) => {
+                        return <li key={item}>{item}</li>;
+                    }) : null }
+                </ul>
             </li>
         )
     }
