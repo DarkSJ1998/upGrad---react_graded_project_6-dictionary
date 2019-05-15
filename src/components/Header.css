@@ -18,6 +18,9 @@
     border: 0px;
     font-size: 16px;
 }
+.DictionaryText:hover {
+    background-color: rgb(44, 36, 129);
+}
 input {
     padding: 10px;
     width: 160%;
@@ -31,4 +34,8 @@ input {
     padding: 10px;
     font-size: 16px;
     cursor: pointer;
+}
+.SearchButton:hover {
+    background-color: #E8671F;
+    color: white;
 }

@@ -10,9 +10,19 @@
     text-align: center;
     cursor: pointer;
 }
+.tabs span:hover {
+    background-color: rgb(44, 36, 129);
+    color: white;
+}
 .selected {
     border: 3px solid #FF00CB;
     border-style: none none solid none
+}
+.audio-icon {
+    color: #6D4FEB;
+    font-size: 20px;
+    margin: 20px;
+    cursor: pointer;
 }
 .container {
     max-height: 90vh;
@@ -31,7 +41,7 @@
 }
 ul {
     list-style-type: none;
-    padding: 0px 10px 10px 20px;
+    padding: 0px 10px 10px 0px;
     font-weight: 100;
 }
 ol {
@@ -40,6 +50,7 @@ ol {
 }
 li {
     margin: 10px 0px;
+    padding: 0px 20px;
 }
 .innerList {
     padding: 0px 10px 10px 40px;

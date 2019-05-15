@@ -2,24 +2,26 @@ import React, {Component} from 'react';
 import './Header.css';
 
 class Header extends Component {
-    state = {
-        data : 'No data yet',
-        word : this.props.word,
-        app_id : '6972a67c',
-        app_key : '81543de0fc18455b3106394b3513ff2a',
-        found : false,
-        selected : '0'
-    };
 
     constructor(props) {
         super(props);
+
+        this.state = {
+            data : 'No data yet',
+            word : this.props.word,
+            app_id : '6972a67c',
+            app_key : '81543de0fc18455b3106394b3513ff2a',
+            found : false,
+            selected : '0'
+        };
+
         this.searchWord = this.searchWord.bind(this);
     }
 
     async searchWord() {
-        console.log("searchWord() called");
+        // console.log("searchWord() called");
         var word_to_search = this.refs.word_to_search.value.toLowerCase();
-
+        this.state.selected = '0';
         if(word_to_search !== '') {
             console.log("Search query received : " + word_to_search);
             
@@ -32,6 +34,7 @@ class Header extends Component {
             });
             const object = await res.json();
             // console.log("##################################");
+            console.log("Response received:-");
             console.log(object);
             if(object.error) {
                 // console.log("inside if");
@@ -49,7 +52,7 @@ class Header extends Component {
     }
 
     render() {
-        console.log("***** Inside Header.render() *****");
+        // console.log("***** Inside Header.render() *****");
         return (
             <div className="SearchBar">
                 {/* <!-- Font Awesome CDN --> */}
@@ -58,7 +61,7 @@ class Header extends Component {
 
                 <form id="search">
                     <label htmlFor="searchField" className="DictionaryText">Dictionary</label>
-                    <input type="text" id="searchField" placeholder="Search Phase or Word" defaultValue={this.props.word} ref="word_to_search"/>
+                    <input type="text" id="searchField" placeholder="Search Phase or Word" defaultValue={this.props.word} ref="word_to_search" autoFocus/>
                     <span type="button" className="SearchButton" onClick={this.searchWord}><i className="fas fa-search"></i></span>
                 </form>
             </div>
