@@ -1,5 +1,8 @@
 # react_graded_project_6-dictionary
 
+Oxford Dictionary is a web application created using React JS. It uses official Oxford Dictionary API to get data stored by the Oxford Dictionary servers. It supports displaying data such as Noun meanings, Adjective meanings, etc and also provides the audio pronunciation of the word (if available).
+
+## Create React App Documentation
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
